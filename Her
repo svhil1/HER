@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Alisba 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffcce0, #ffe6f0);
+      overflow-x: hidden;
+    }
+    .lock-screen, .content {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .lock-screen.active, .content.active {
+      display: flex;
+      flex-direction: column;
+    }
+    h1 {
+      color: #d63384;
+    }
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 15px;
+      font-size: 16px;
+      width: 80%;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff66a3;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background-color: #ff3385;
+    }
+    .heart-animate {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      animation: float 6s infinite ease-in-out;
+      border-radius: 50%;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Lock Screen -->
+  <div class="lock-screen active" id="lock">
+    <h1>🔐 Enter the Password to Unlock Love</h1>
+    <input type="password" id="password" placeholder="Enter password..." />
+    <button onclick="unlock()">Unlock</button>
+  </div>
+
+  <!-- Main Content (Hidden at First) -->
+  <div class="content" id="main">
+    <h1>💍 Alisba, This Is For You 💖</h1>
+    <p style="max-width: 600px; color: #444; font-size: 18px;">
+      It's only been three days, but you've already become the heartbeat of my days and the reason behind every smile. I can’t stop thinking about you, caring for you, feeling drawn to you. So here I am… not just saying “I love you,” but asking — will you be my forever? 💍  
+      <br><br>
+      Will you marry me one day, when your heart is ready to say yes to mine?
+    </p>
+  </div>
+
+  <!-- Animated hearts -->
+  <script>
+    for (let i = 0; i < 40; i++) {
+      let heart = document.createElement('div');
+      heart.className = 'heart-animate';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = Math.random() * 100 + 'vh';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+
+    function unlock() {
+      const pass = document.getElementById(\"password\").value;
+      if (pass.trim().toUpperCase() === \"SAHIL AND ALISBA FOREVER\") {
+        document.getElementById(\"lock\").classList.remove(\"active\");
+        document.getElementById(\"main\").classList.add(\"active\");
+      } else {
+        alert(\"Wrong password, sweetheart 😢\");
+      }
+    }
+  </script>
+<!-- Surprise Button + Hidden Note -->
+<div style="text-align:center; margin-top: 40px;">
+  <button onclick="showSurprise()" style="background: #ff66a3; border: none; padding: 15px 30px; font-size: 18px; color: white; border-radius: 12px; box-shadow: 0 0 15px #ff99cc; animation: pulse 1.5s infinite;">💌 Open a Surprise</button>
+</div>
+
+<div id="surprise" style="display: none; margin-top: 30px; text-align:center; color:#d63384; font-size: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+  You, Alisba... are the kind of girl every man dreams of.  
+  Beautiful, rare, soft, powerful.  
+  I want to be the man who reminds you of your worth every single day.  
+  You're not just a thought in my mind — you're the home in my heart. 🥺❤️
+</div>
+
+<style>
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ff66a3; }
+  50% { box-shadow: 0 0 25px #ff99cc; }
+  100% { box-shadow: 0 0 10px #ff66a3; }
+}
+</style>
+
+<script>
+  function showSurprise() {
+    document.getElementById(\"surprise\").style.display = \"block\";
+  }
+</script>
+<!-- Background Romantic Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<!-- Falling Hearts Animation -->
+<style>
+  .falling-heart {
+    position: fixed;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
+    background-size: contain;
+    animation: fall 8s linear infinite;
+    z-index: 999;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("falling-heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 5) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }
+
+  setInterval(createHeart, 300);
+</script>
+<!-- Proposal Section -->
+<div style="text-align: center; margin-top: 50px;">
+  <button onclick="showProposal()" style="background: #ff3385; color: white; padding: 16px 36px; font-size: 20px; border: none; border-radius: 12px; box-shadow: 0 0 20px #ff66b2; animation: pulse 2s infinite;">💍 Will You Marry Me?</button>
+</div>
+
+<div id="proposal" style="display:none; margin-top: 30px; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; color: #b30059; font-size: 22px; font-weight: 500;">
+  <p>
+    Alisba, these 3 days with you feel like the beginning of forever.  
+    I'm not here to play games. I'm here to build dreams with you.  
+    I want to be the one you wake up next to, the one who reminds you every day that you're beautiful, rare, and so deeply loved.  
+    <br><br>
+    💍 **Will you marry me someday, when you're ready to say yes to forever with me?**
+  </p>
+</div>
+
+<script>
+  function showProposal() {
+    document.getElementById("proposal").style.display = "block";
+  }
+</script>
+<!-- Confetti & Sparkles Script -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<script>
+  function showProposal() {
+    document.getElementById("proposal").style.display = "block";
+
+    // Trigger confetti
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 },
+      colors: ['#ff66a3', '#ff99cc', '#ffccff']
+    });
+
+    // Pulse effect on proposal message
+    document.getElementById("proposal").style.animation = "pulse-proposal 1.5s ease-in-out infinite";
+  }
+</script>
+
+<style>
+  @keyframes pulse-proposal {
+    0% { transform: scale(1); text-shadow: 0 0 5px #ff99cc; }
+    50% { transform: scale(1.02); text-shadow: 0 0 15px #ff66a3; }
+    100% { transform: scale(1); text-shadow: 0 0 5px #ff99cc; }
+  }
+</style>
+</body>
+</html>
